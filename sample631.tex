@@ -293,18 +293,22 @@ For both \CCD and \CCH data, the absolute flux calibration accuracy is ${\sim}$1
 \section{Analysis \& results} \label{sec:analysis}
 
 \subsection{Detection of \CCD}
+Figure \ref{fig:TW_Hya_gallery} summarizes the observational results of \CCH and \CCD in TW~Hya. We integrated the emission of \CCH $N=4$--3 and \CCD $N=2$--1 along the spectral axis to create the velocity-integrated intensity (or zeroth moment) maps, which are shown in Figure \ref{fig:TW_Hya_gallery} (a) and (b). The Keplerian mask for CLEAN is used and all hyperfine components are stacked. The \CCH emission clearly shows a ring-like morphology with an inner radius of ${\sim}0\farcs5$ and an outer radius of ${\sim}2\arcsec$, which is consistent with the previous studies \citep{Bergin2016, Bergin2024}. The \CCD zeroth moment map exhibit a weak emission, whose spatial distribution is roughly consistent with that of \CCH. We create azimuthally averaged radial profiles of these zeroth moment maps using the Python package \texttt{GoFish} \citep{GoFish}. The \CCH radial profile peaks at ${\approx}70$\,au, where the \CCD also shows a weak but significant emission. This radial coincidence indicates that the emission of \CCH and \CCD trace the similar radial region. We also show the deprojected, azimuthally stacked spectra of three detected \CCD $N=2$--1 hyperfine transitions in Figure \ref{fig:TW_Hya_gallery} (d). Prior to the stacking, we align the velocity shift due to the Keplerian rotation to the systemic velocity (2.8\,km\,s$^{-1}$; \citealt{Teague2022}) using \texttt{GoFish} \citep{GoFish} assuming the same stellar and disk parameters as used for Keplerian mask. The spectrum clearly exhibits  detection of the $F=3/2$--$1/2$ and $F=5/2$--$3/2$ hyperfine component, which are blended, at a significance of ${\gtrsim}5\sigma$, while the $F=7/2$--$5/2$ hyperfine component is at ${\sim}3\sigma$ significance. Other three hyperfine components are not detected due to their weaker line strengths (i.e., small Einstein A coefficients). 
+
 \begin{figure*}
 \epsscale{1.1}
 \plotone{TW_Hya_gallery.pdf}
-\caption{Velocity-integrated intensity (zeroth moment) map of \CCH $N=4$--3 (a) and \CCD $N=2$--1 (b) stacked over all hyperfine lines. In each panel, the 0\farcs5 synthesized beam and a 50 au scale bar are shown in the lower left and lower right, respectively. The panel (c) shows the azimuthally averaged radial profiles of the \CCH and \CCD emission. The shaded regions indicate uncertainties of [1, 2, 3]$\sigma$. The panel (d) shows the deprojected, azimuthally stacked spectrum of \CCD $N=2$--1 over an annulus with an inner radius of 0\farcs8 and an outer radius of 1\farcs8. While the observations cover six hyperfine lines of \CCD, here only the detected lines among them ($F=3/2$--$1/2$, $F=5/2$--$3/2$, and $F=7/2$--$5/2$, where the first two are blended) are shown. The LSRK velocity is with respect to the rest frequency of the $F=7/2$--$5/2$ transition, where the systemic velocity of TW~Hya is 2.8\,km\,s$^{-1}$.}
-\label{fig:abundance_comparison}
+\caption{Velocity-integrated intensity (zeroth moment) map of \CCH $N=4$--3 (a) and \CCD $N=2$--1 (b) stacked over all hyperfine lines. In each panel, the 0\farcs5 synthesized beam and a 50 au scale bar are shown in the lower left and lower right, respectively. The panel (c) shows the azimuthally averaged radial profiles of the \CCH and \CCD emission. The shaded regions indicate uncertainties of [1, 2, 3]$\sigma$. The panel (d) shows the deprojected, azimuthally stacked spectrum of \CCD $N=2$--1 over an annulus with an inner radius of 0\farcs8 and an outer radius of 1\farcs8. While the observations cover six hyperfine lines of \CCD, here only the detected ones among them ($F=3/2$--$1/2$, $F=5/2$--$3/2$, and $F=7/2$--$5/2$, where the first two are blended) are shown. The LSRK velocity is with respect to the rest frequency of the $F=7/2$--$5/2$ transition, where the systemic velocity of TW~Hya is 2.8\,km\,s$^{-1}$ \citep{Teague2022}.}
+\label{fig:TW_Hya_gallery}
 \end{figure*}
+
+We also verify the detection of \CCD $N=2$--1 by matched filtering analysis \citep{Loomis2018}. The Keplerian mask for CLEAN is used as a filter kernel, where the inner and outer radii are fixed to 1\farcs0 and 1\farcs6, respectively, to better match to the distribution of the \CCD emission. The response to this filter is computed using the Python package \texttt{VISIBLE} \citep{Loomis2018}, and shown in Figure \ref{fig:matched_filter_C2D}. The blended $F=3/2$--$1/2$ and $F=5/2$--$3/2$ hyperfine components exhibit a ${\gtrsim}6\sigma$ response, while the $F=7/2$--$5/2$ component shows a ${\sim}3\sigma$ response. Other three hyperfine components show no more than $3\sigma$ response as expected from their weaker intrinsic line strength as shown in Figure \ref{fig:matched_filter_C2D}. 
 
 
 \begin{figure}
 \plotone{TW_Hya_response_rmin1.0_rmax1.6.pdf}
 \caption{Matched filter responses of \CCD $N=2$--1 hyperfine transitions. The filter kernel is a simple Keplerian-rotating disk model with the inner and outer radius of 1\farcs0 and 1\farcs6, respectively. The gray dotted horizontal line indicate the $3\sigma$ response. The frequency and intrinsic line strength for each hyperfine component is shown by the vertical line segments.}
-\label{fig:abundance_comparison}
+\label{fig:matched_filter_C2D}
 \end{figure}
 
 
@@ -314,9 +318,9 @@ For both \CCD and \CCH data, the absolute flux calibration accuracy is ${\sim}$1
 
 \subsection{Deuteration Pathways Traced by \CCH/\CCD Ratio}
 
-\subsection{Effect of \CCH $N=4$--3 Optical Depth on the Published $^{13}$CCH/$^{12}$CCH Ratio}
-
 \subsection{Multiple Paths of Deuterium Fractionation in the TW~Hya Disk}
+
+\subsection{Effect of \CCH $N=4$--3 Optical Depth on the Published $^{13}$CCH/$^{12}$CCH Ratio}
 
 \section{Summary} \label{sec:summary}
 
